@@ -1,0 +1,10 @@
+func firstBadVersion(n int) int {
+    for i:=n;i>0;i--{
+    res:=isBadVersion(i)
+    pres:=isBadVersion(i-1)
+        if res && !pres {
+        return i
+    }
+    }
+    return 1
+}
