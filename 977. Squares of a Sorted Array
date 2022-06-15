@@ -1,0 +1,21 @@
+func sortedSquares(nums []int) []int {
+    
+    l:=len(nums)
+    resArr:=make([]int, l)
+    l=l-1
+    p1:=0
+    p2:=l
+    
+    for p1<=p2{
+        if math.Abs(float64(nums[p1]))>math.Abs(float64(nums[p2])){
+            resArr[l]=nums[p1]*nums[p1]
+            l--
+            p1++
+        }else{
+             resArr[l]=nums[p2]*nums[p2]
+            l--
+            p2--
+        }
+    }
+    return resArr
+}
