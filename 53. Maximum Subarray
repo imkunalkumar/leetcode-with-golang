@@ -1,0 +1,17 @@
+func maxSubArray(nums []int) int {
+    max:=0
+    actualMax:=nums[0]
+  
+    for _,val:=range nums{
+        max=max+val
+         if max>actualMax{
+            actualMax=max
+        }
+        if max<0 {
+            max=0
+        } 
+    }
+   
+    return actualMax
+   
+}
