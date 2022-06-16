@@ -1,0 +1,17 @@
+func twoSum(nums []int, target int) []int {
+    m:=make(map[int]int)
+    arr :=make([]int,2)
+    for i,val:=range nums{
+        req:=target-val
+        val1,ok:=m[req]
+        if !ok{
+            m[val]=i
+        }else{
+            arr[0]=i
+            arr[1]=val1
+            return arr
+        }
+        
+    }
+    return arr
+}
