@@ -1,0 +1,10 @@
+func moveZeroes(nums []int)  {
+    p1:=0
+    for i,val:=range nums{
+        if val!=0{
+           nums[i],nums[p1]=nums[p1], nums[i]
+            p1++
+        }
+       
+    }
+}
