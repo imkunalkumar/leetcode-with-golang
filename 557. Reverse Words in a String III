@@ -1,0 +1,20 @@
+func reverseWords(s string) string {
+    arr:=strings.Split(s," ")
+    str:=""
+    for i,val:= range arr{
+        if i==len(arr)-1{
+            str+=reverseChar(val)
+        }else{
+            str+=reverseChar(val)+" "
+        }
+        
+    }
+    return str
+}
+
+func reverseChar(s string) (res string){
+    for _,val:= range s{
+        res=string(val)+res
+    }
+    return
+}
