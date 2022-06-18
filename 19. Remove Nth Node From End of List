@@ -1,0 +1,30 @@
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+    node:=head
+    acNode:=head
+    l:=1
+    for node.Next!=nil{
+        if(l>n){
+            acNode=acNode.Next
+        }
+        l++
+        node=node.Next
+    }
+    if l==n{
+        head=head.Next
+        return head
+    }
+    if acNode.Next!=nil{
+    acNode.Next=acNode.Next.Next
+    }else{
+         head=nil
+    }
+  
+    return head
+}
