@@ -1,0 +1,18 @@
+func middleNode(head *ListNode) *ListNode {
+    l:=1
+    p2:=1
+    node:=head
+    for node.Next!=nil{
+        l++
+        node=node.Next
+    }
+    node=head
+   
+        l=l/2+1
+    
+    for p2<l{
+        node=node.Next
+        p2++
+    }
+    return node
+}
