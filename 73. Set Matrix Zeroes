@@ -1,0 +1,26 @@
+func setZeroes(matrix [][]int)  {
+    type pos struct{
+        i int
+        j int
+    }
+    arr:=make([]pos,0)
+     for i,val:=range matrix{
+        for j,jval:=range val{
+            
+            if jval==0{
+                res:=pos{i,j}
+                arr=append(arr,res)
+            }
+        }
+    }
+    for _,val:=range arr {
+        
+        for i,_:=range matrix[val.i]{
+          matrix[val.i][i]=0
+        }
+        for i:=0;i<len(matrix);i++{
+             matrix[i][val.j]=0
+            
+        }
+    }
+}
