@@ -1,0 +1,23 @@
+func generate(numRows int) [][]int {
+    arr:=make([][]int,0)
+    temparr:=make([]int,0)
+    for i:=0;i<numRows;i++{
+        temparr=generateInArr(temparr)
+        arr=append(arr,temparr)
+    }
+    return arr
+}
+
+func generateInArr(arr []int) []int{
+    tempArr:=make([]int,0)
+    if len(arr)<=1{
+        arr=append(arr,1)
+        return arr
+    }
+    tempArr=append(tempArr,1)
+    for i:=0;i<len(arr)-1;i++{
+         tempArr=append(tempArr,arr[i]+arr[i+1])
+    }
+    tempArr=append(tempArr,1)
+    return tempArr
+}
